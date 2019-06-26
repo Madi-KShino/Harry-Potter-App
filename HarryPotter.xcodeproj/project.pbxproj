@@ -13,6 +13,9 @@
 		53D9CC0922C3E2C600FFAA21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D9CC0722C3E2C600FFAA21 /* LaunchScreen.storyboard */; };
 		53D9CC1322C3E2E900FFAA21 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9CC1222C3E2E900FFAA21 /* Characters.swift */; };
 		53D9CC1622C3E2F700FFAA21 /* CharacterControleler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9CC1522C3E2F700FFAA21 /* CharacterControleler.swift */; };
+		53D9CC1922C3F37D00FFAA21 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9CC1822C3F37D00FFAA21 /* CharacterViewController.swift */; };
+		53D9CC1C22C409FC00FFAA21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9CC1B22C409FC00FFAA21 /* SearchViewController.swift */; };
+		53D9CC1E22C40A0900FFAA21 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9CC1D22C40A0900FFAA21 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		53D9CC0A22C3E2C600FFAA21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D9CC1222C3E2E900FFAA21 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		53D9CC1522C3E2F700FFAA21 /* CharacterControleler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterControleler.swift; sourceTree = "<group>"; };
+		53D9CC1822C3F37D00FFAA21 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		53D9CC1B22C409FC00FFAA21 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		53D9CC1D22C40A0900FFAA21 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 				53D9CC1122C3E2DD00FFAA21 /* View */,
 				53D9CC1422C3E2ED00FFAA21 /* Model */,
 				53D9CC1722C3E2FA00FFAA21 /* Model Controller */,
+				53D9CC1A22C409E000FFAA21 /* View Controllers */,
 				53D9CC1022C3E2D000FFAA21 /* Resources */,
 			);
 			path = HarryPotter;
@@ -97,6 +104,16 @@
 				53D9CC1522C3E2F700FFAA21 /* CharacterControleler.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		53D9CC1A22C409E000FFAA21 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				53D9CC1D22C40A0900FFAA21 /* IntroViewController.swift */,
+				53D9CC1B22C409FC00FFAA21 /* SearchViewController.swift */,
+				53D9CC1822C3F37D00FFAA21 /* CharacterViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +187,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D9CC1C22C409FC00FFAA21 /* SearchViewController.swift in Sources */,
+				53D9CC1922C3F37D00FFAA21 /* CharacterViewController.swift in Sources */,
 				53D9CBFF22C3E2C500FFAA21 /* AppDelegate.swift in Sources */,
+				53D9CC1E22C40A0900FFAA21 /* IntroViewController.swift in Sources */,
 				53D9CC1322C3E2E900FFAA21 /* Characters.swift in Sources */,
 				53D9CC1622C3E2F700FFAA21 /* CharacterControleler.swift in Sources */,
 			);
@@ -319,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HarryPotter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HarryPotter/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,7 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HarryPotter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HarryPotter/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
