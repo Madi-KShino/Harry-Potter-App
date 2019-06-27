@@ -18,7 +18,7 @@ class CharacterController {
     let baseURL = URL(string: "https://www.potterapi.com/v1/")
     
     //FETCH CHARACTERS
-    func fetchCharacters(searchedCharacter: String, completion: @escaping((Characters?) -> Void )) {
+    func fetchCharacters(searchedCharacter: String, completion: @escaping(([Character]?) -> Void )) {
         
         //UNWRAPPED URL TO USE IN FUNCTION
         guard let unwrappedURL = baseURL else { completion(nil); return }
@@ -41,10 +41,10 @@ class CharacterController {
             }
             if let data = data {
                 do {
-                    let character = try JSONDecoder().decode(Characters.self, from: data)
-                    completion(character)
+                    let characterArray = try JSONDecoder().decode([Character].self, from: data)
+                    completion(characterArray)
                 } catch {
-                    print("Oops! Error Fetching Character!")
+                    print(error)
                     completion(nil)
                     return
                 }

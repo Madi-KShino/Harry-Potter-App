@@ -8,11 +8,18 @@
 
 import Foundation
 
+//struct CharactersArray: Decodable {
+//    
+//    let characters: [Character]
+//    
+//}
+
 //CHARACTER PROPERTIES
-struct Characters: Decodable {
+struct Character: Decodable {
     
     let name: String
     let species: String
+    let role: String
     let school: String
     let house: String
     let ministryOfMagic: Bool

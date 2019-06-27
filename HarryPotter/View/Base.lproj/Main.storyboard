@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Character View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="H5r-aJ-zV9">
             <objects>
-                <viewController id="9WJ-HE-6Fb" customClass="CharacterViewController" customModule="HarryPotter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9WJ-HE-6Fb" customClass="IntroViewController" customModule="HarryPotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7IC-Qv-hYT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="1276.8115942028987" y="179.46428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="jI8-h2-9CL">
             <objects>
-                <viewController id="Zdl-F7-SlL" sceneMemberID="viewController">
+                <viewController id="Zdl-F7-SlL" customClass="SearchViewController" customModule="HarryPotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xue-Zz-8en">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,58 +72,69 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parchment" translatesAutoresizingMaskIntoConstraints="NO" id="BkK-1T-2ht">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foot" translatesAutoresizingMaskIntoConstraints="NO" id="PXh-Ub-Hwl">
-                                <rect key="frame" x="20" y="20" width="374" height="734"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="foot" translatesAutoresizingMaskIntoConstraints="NO" id="PXh-Ub-Hwl">
+                                <rect key="frame" x="35" y="14" width="161" height="248"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jys-LU-LP1">
-                                <rect key="frame" x="35" y="300" width="344" height="141"/>
+                                <rect key="frame" x="37" y="300" width="340" height="208"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Who are you looking for?" scopeBarBackgroundImage="parchment" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-FN-46B">
-                                        <rect key="frame" x="4" y="0.0" width="340" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="123"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="123" id="OhN-nP-M5y"/>
                                             <constraint firstAttribute="width" constant="340" id="SD7-rk-X0l"/>
                                         </constraints>
                                         <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-7L-ObG">
-                                        <rect key="frame" x="289" y="71" width="55" height="70"/>
+                                        <rect key="frame" x="285" y="138" width="55" height="70"/>
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
                                         <state key="normal" title="Find.">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Ycb-Y3-BeI" kind="show" id="O1e-Lv-gin"/>
+                                            <action selector="searchButtonTapped:" destination="Zdl-F7-SlL" eventType="touchUpInside" id="x1A-Zo-I4x"/>
+                                            <segue destination="Ycb-Y3-BeI" kind="show" identifier="toCharacterDetailView" id="O1e-Lv-gin"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foot2" translatesAutoresizingMaskIntoConstraints="NO" id="ZXI-4V-EJJ">
+                                <rect key="frame" x="7" y="594" width="400" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="7sb-ts-Tdi"/>
+                                    <constraint firstAttribute="height" constant="120" id="gcp-Bj-qBG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZXI-4V-EJJ" firstAttribute="leading" secondItem="iFl-ws-sVl" secondAttribute="leading" constant="7" id="0R6-OB-ckK"/>
                             <constraint firstItem="iFl-ws-sVl" firstAttribute="trailing" secondItem="BkK-1T-2ht" secondAttribute="trailing" id="604-LD-Un0"/>
-                            <constraint firstItem="PXh-Ub-Hwl" firstAttribute="top" secondItem="iFl-ws-sVl" secondAttribute="top" constant="20" id="Fzd-Bx-WYp"/>
+                            <constraint firstItem="iFl-ws-sVl" firstAttribute="bottom" secondItem="ZXI-4V-EJJ" secondAttribute="bottom" constant="60" id="BHO-wk-tUh"/>
                             <constraint firstItem="BkK-1T-2ht" firstAttribute="top" secondItem="iFl-ws-sVl" secondAttribute="top" id="MKR-D9-z2p"/>
-                            <constraint firstItem="PXh-Ub-Hwl" firstAttribute="leading" secondItem="xue-Zz-8en" secondAttribute="leading" constant="20" id="SeY-Kt-gpa"/>
-                            <constraint firstItem="jys-LU-LP1" firstAttribute="leading" secondItem="iFl-ws-sVl" secondAttribute="leading" constant="35" id="UhG-4j-CKm"/>
                             <constraint firstItem="BkK-1T-2ht" firstAttribute="leading" secondItem="iFl-ws-sVl" secondAttribute="leading" id="WjY-lM-Aoj"/>
-                            <constraint firstItem="iFl-ws-sVl" firstAttribute="bottom" secondItem="PXh-Ub-Hwl" secondAttribute="bottom" constant="20" id="Yit-FL-4bk"/>
-                            <constraint firstItem="iFl-ws-sVl" firstAttribute="trailing" secondItem="PXh-Ub-Hwl" secondAttribute="trailing" constant="20" id="a0l-bc-rH3"/>
-                            <constraint firstItem="jys-LU-LP1" firstAttribute="top" secondItem="iFl-ws-sVl" secondAttribute="top" constant="300" id="d3x-4k-iD8"/>
-                            <constraint firstItem="iFl-ws-sVl" firstAttribute="trailing" secondItem="jys-LU-LP1" secondAttribute="trailing" constant="35" id="eE6-Fc-p3N"/>
+                            <constraint firstItem="jys-LU-LP1" firstAttribute="centerX" secondItem="xue-Zz-8en" secondAttribute="centerX" id="hDo-fy-W6n"/>
+                            <constraint firstItem="ZXI-4V-EJJ" firstAttribute="centerX" secondItem="xue-Zz-8en" secondAttribute="centerX" id="iY9-Rg-vYy"/>
                             <constraint firstItem="iFl-ws-sVl" firstAttribute="bottom" secondItem="BkK-1T-2ht" secondAttribute="bottom" id="j3h-TN-Iol"/>
+                            <constraint firstItem="jys-LU-LP1" firstAttribute="centerY" secondItem="xue-Zz-8en" secondAttribute="centerY" id="wsn-7W-1Re"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iFl-ws-sVl"/>
                     </view>
+                    <connections>
+                        <outlet property="characterSearchBar" destination="WUn-FN-46B" id="ACE-6K-vKs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTi-9K-9Yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2002.8985507246377" y="178.79464285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--Character View Controller-->
         <scene sceneID="Ouo-eJ-K5k">
             <objects>
-                <viewController id="Ycb-Y3-BeI" sceneMemberID="viewController">
+                <viewController id="Ycb-Y3-BeI" customClass="CharacterViewController" customModule="HarryPotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pSJ-x5-viZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,34 +142,224 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parchment" translatesAutoresizingMaskIntoConstraints="NO" id="Pdi-EU-Nc9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFh-Nn-46W">
-                                <rect key="frame" x="10" y="70" width="394" height="74.5"/>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebs-BJ-jqw">
-                                <rect key="frame" x="10" y="174.5" width="394" height="57.5"/>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FKQ-8i-Qct">
+                                <rect key="frame" x="0.0" y="20" width="414" height="754"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFh-Nn-46W">
+                                        <rect key="frame" x="148.5" y="0.0" width="117.5" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="t3V-7o-iRe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(species)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebs-BJ-jqw">
+                                        <rect key="frame" x="165" y="80" width="84.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="rFK-CM-wmh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="i7d-Gi-Led">
+                                        <rect key="frame" x="17" y="125" width="380" height="519"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AOt-ua-HEN">
+                                                <rect key="frame" x="159.5" y="0.0" width="61" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(role)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWo-32-6tM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="Xce-he-fO6"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="kWo-32-6tM" firstAttribute="centerX" secondItem="AOt-ua-HEN" secondAttribute="centerX" id="fhf-Vv-7r0"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M57-Tc-CHq">
+                                                <rect key="frame" x="2" y="66" width="376" height="170"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Affiliation -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDA-mg-PVj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="170"/>
+                                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy3-7u-pWu">
+                                                        <rect key="frame" x="193" y="0.0" width="183" height="170"/>
+                                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NTB-SF-AwO">
+                                                <rect key="frame" x="103.5" y="242" width="173" height="55"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House - " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d72-xN-Vu0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="55"/>
+                                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="445-sa-MuY">
+                                                        <rect key="frame" x="91.5" y="0.0" width="81.5" height="55"/>
+                                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="9UE-VY-Fvy"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Affiliations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRV-9w-aBr">
+                                                <rect key="frame" x="144" y="303" width="92" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="dhO-7T-UX7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Mnl-HP-Yw1">
+                                                <rect key="frame" x="80" y="359" width="220" height="160"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MCq-Lp-tkn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="34"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ministry of Magic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAM-m8-a7V">
+                                                                <rect key="frame" x="0.0" y="0.0" width="165" height="34"/>
+                                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNE-xP-ep8">
+                                                                <rect key="frame" x="185" y="0.0" width="35" height="34"/>
+                                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="CFW-hr-FgV"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Ab-n9-XXE">
+                                                        <rect key="frame" x="0.0" y="43" width="220" height="34"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Order of the Phoenix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTT-L6-X6S">
+                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
+                                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sJ-D3-iCe">
+                                                                <rect key="frame" x="185" y="0.0" width="35" height="34"/>
+                                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="zLF-Uq-TE2">
+                                                        <rect key="frame" x="0.0" y="86" width="220" height="34"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dumbledore's Army" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plf-5o-r5Z">
+                                                                <rect key="frame" x="0.0" y="0.0" width="141" height="34"/>
+                                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDh-Uu-8mY">
+                                                                <rect key="frame" x="185" y="0.0" width="35" height="34"/>
+                                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="220" id="clU-e7-LdL"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-CH-urj">
+                                                        <rect key="frame" x="0.0" y="129" width="220" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Death Eater" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgk-Rq-5q9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="165" height="31"/>
+                                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp0-oy-BKw">
+                                                                <rect key="frame" x="185" y="0.0" width="35" height="31"/>
+                                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Pze-CH-urj" firstAttribute="centerX" secondItem="Mnl-HP-Yw1" secondAttribute="centerX" id="4jo-DS-CfQ"/>
+                                                    <constraint firstItem="zLF-Uq-TE2" firstAttribute="centerX" secondItem="Mnl-HP-Yw1" secondAttribute="centerX" id="TGR-zB-ffL"/>
+                                                    <constraint firstItem="MCq-Lp-tkn" firstAttribute="centerX" secondItem="Mnl-HP-Yw1" secondAttribute="centerX" id="djn-cY-Vfn"/>
+                                                    <constraint firstItem="2Ab-n9-XXE" firstAttribute="centerX" secondItem="Mnl-HP-Yw1" secondAttribute="centerX" id="tcU-Yq-mVY"/>
+                                                    <constraint firstAttribute="height" constant="160" id="yvE-hZ-UGa"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Mnl-HP-Yw1" firstAttribute="centerX" secondItem="i7d-Gi-Led" secondAttribute="centerX" id="0UY-lU-JdN"/>
+                                            <constraint firstItem="Mnl-HP-Yw1" firstAttribute="leading" secondItem="i7d-Gi-Led" secondAttribute="leading" constant="80" id="MeQ-ks-mud"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mnl-HP-Yw1" secondAttribute="trailing" constant="80" id="T9l-zO-M2f"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hog" translatesAutoresizingMaskIntoConstraints="NO" id="5zW-1x-fDF">
+                                        <rect key="frame" x="97" y="644" width="220" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="CZb-Kq-e1d"/>
+                                            <constraint firstAttribute="width" secondItem="5zW-1x-fDF" secondAttribute="height" multiplier="2:1" id="NkG-09-9Bt"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ebs-BJ-jqw" firstAttribute="centerX" secondItem="FKQ-8i-Qct" secondAttribute="centerX" id="RnH-de-vE0"/>
+                                    <constraint firstItem="TFh-Nn-46W" firstAttribute="centerX" secondItem="FKQ-8i-Qct" secondAttribute="centerX" id="js9-p3-0eI"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TFh-Nn-46W" firstAttribute="top" secondItem="ghc-a9-6eC" secondAttribute="top" constant="70" id="5TC-Kx-pM2"/>
                             <constraint firstItem="Pdi-EU-Nc9" firstAttribute="top" secondItem="ghc-a9-6eC" secondAttribute="top" id="7dr-WD-jNM"/>
-                            <constraint firstItem="ebs-BJ-jqw" firstAttribute="top" secondItem="TFh-Nn-46W" secondAttribute="bottom" constant="30" id="FXO-dq-yEC"/>
+                            <constraint firstItem="ghc-a9-6eC" firstAttribute="trailing" secondItem="FKQ-8i-Qct" secondAttribute="trailing" id="Gcq-XV-89V"/>
                             <constraint firstItem="ghc-a9-6eC" firstAttribute="bottom" secondItem="Pdi-EU-Nc9" secondAttribute="bottom" id="KBo-WY-iP7"/>
                             <constraint firstItem="ghc-a9-6eC" firstAttribute="trailing" secondItem="Pdi-EU-Nc9" secondAttribute="trailing" id="MRB-Fw-eHY"/>
-                            <constraint firstItem="ghc-a9-6eC" firstAttribute="trailing" secondItem="TFh-Nn-46W" secondAttribute="trailing" constant="10" id="OUI-SF-snM"/>
-                            <constraint firstItem="TFh-Nn-46W" firstAttribute="leading" secondItem="ghc-a9-6eC" secondAttribute="leading" constant="10" id="Siv-aI-xJy"/>
-                            <constraint firstItem="ghc-a9-6eC" firstAttribute="trailing" secondItem="ebs-BJ-jqw" secondAttribute="trailing" constant="10" id="Vqt-hh-cnD"/>
+                            <constraint firstItem="FKQ-8i-Qct" firstAttribute="leading" secondItem="pSJ-x5-viZ" secondAttribute="leading" id="QMP-0A-5x2"/>
+                            <constraint firstItem="FKQ-8i-Qct" firstAttribute="top" secondItem="ghc-a9-6eC" secondAttribute="top" constant="20" id="WQs-kA-EGp"/>
                             <constraint firstItem="Pdi-EU-Nc9" firstAttribute="leading" secondItem="ghc-a9-6eC" secondAttribute="leading" id="agu-0G-RJS"/>
-                            <constraint firstItem="ebs-BJ-jqw" firstAttribute="leading" secondItem="ghc-a9-6eC" secondAttribute="leading" constant="10" id="lQh-O3-NQL"/>
+                            <constraint firstItem="ghc-a9-6eC" firstAttribute="bottom" secondItem="FKQ-8i-Qct" secondAttribute="bottom" id="tMe-nw-PfW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ghc-a9-6eC"/>
                     </view>
+                    <connections>
+                        <outlet property="armyLabel" destination="bDh-Uu-8mY" id="WbT-zj-4CN"/>
+                        <outlet property="deathLabel" destination="Bp0-oy-BKw" id="RQk-is-kwt"/>
+                        <outlet property="houseLabel" destination="445-sa-MuY" id="HZT-7X-Cif"/>
+                        <outlet property="ministryLabel" destination="kNE-xP-ep8" id="2VY-3F-UWU"/>
+                        <outlet property="nameLabel" destination="TFh-Nn-46W" id="9aB-mJ-0M7"/>
+                        <outlet property="orderLabel" destination="8sJ-D3-iCe" id="sPd-3b-Ynx"/>
+                        <outlet property="roleLabel" destination="kWo-32-6tM" id="rXG-gk-ezM"/>
+                        <outlet property="schoolLabel" destination="gy3-7u-pWu" id="Xr5-Di-9ti"/>
+                        <outlet property="speciesLabel" destination="ebs-BJ-jqw" id="LOy-vw-YHS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gnb-hK-Hby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,6 +388,8 @@
     <resources>
         <image name="deathly" width="1200" height="1200"/>
         <image name="foot" width="442" height="750"/>
+        <image name="foot2" width="750" height="442"/>
+        <image name="hog" width="1194" height="1200"/>
         <image name="parchment" width="564" height="794"/>
     </resources>
     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
