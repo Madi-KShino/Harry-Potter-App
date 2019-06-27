@@ -31,6 +31,10 @@ class CharacterViewController: UIViewController {
         CharacterController.sharedInstance.fetchCharacters(searchedCharacter: nameEntered) { (characters) in
             guard let unwrappedCharacter = characters?.first else { return }
             self.updateView(character: unwrappedCharacter)
+            
+            DispatchQueue.main.async {
+                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "parchment")!)
+            }
         }
     }
     
